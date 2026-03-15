@@ -7,6 +7,9 @@
   --secondary-foreground: #ededed;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 @theme inline {
   --color-background: var(--background);

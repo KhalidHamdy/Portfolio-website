@@ -38,9 +38,9 @@ const certificationsData = [
     },
 ]
 
-function Certifications() {
+function Certifications({ id }: { id: string }) {
     return (
-        <Section className='py-8'>
+        <Section id={id} className='py-8'>
             <Title SectionName='Certifications' SectionDescription='Professional Credentials' />
             <div className='grid grid-cols-3 gap-4 py-8'>
                 {certificationsData.map((certification) => (

@@ -7,11 +7,11 @@ import Skills from "@/components/pages/home/skills";
 export default function Home() {
   return (
     <div>
-      <AboutSection />
-      <Education />
-      <Projects />
-      <Certifications />
-      <Skills />
+      <AboutSection id='about' />
+      <Education id='education' />
+      <Projects id='projects' />
+      <Certifications id='certifications' />
+      <Skills id='skills' />
     </div>
   );
 }

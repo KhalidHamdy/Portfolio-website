@@ -13,9 +13,9 @@ const educationData = [
     },
    
 ]
-function Education() {
+function Education({ id }: { id: string }) {
   return (
-    <Section className='py-8'>
+    <Section id={id} className='py-8'>
         <Title SectionName='Education' SectionDescription='My academic background' />
         <div className='flex flex-col gap-4 py-4'>
 

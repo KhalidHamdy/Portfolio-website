@@ -16,10 +16,10 @@ const skillsData = [
             'Analytical thinking', 'Problem solving', 'Time management']
     },
 ]
-function Skills() {
+function Skills({ id }: { id: string }) {
     return (
-        <Section className='py-8'>
-            <Title SectionName='Skills' SectionDescription='My skills' />
+        <Section id={id} className='py-8'>
+            <Title SectionName='Skills' SectionDescription='Technologies & competencies' />
             <div className='grid grid-cols-2 gap-4 py-4'>
               {skillsData.map((skill) => (
                 <div className='flex flex-col gap-2 py-4 hover:border-orange-300 transition-all duration-300' key={skill.title}>

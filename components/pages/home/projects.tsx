@@ -45,9 +45,9 @@ const projectsData = [
     },
 ]
 
-function Projects() {
+function Projects({ id }: { id: string }) {
     return (
-        <Section className='py-8'>
+        <Section id={id} className='py-8'>
             <Title SectionName='Projects' SectionDescription="Things I've built" />
             <div className='relative grid grid-cols-2 gap-8 py-4 h-full'>
                 {projectsData.map((project) => (

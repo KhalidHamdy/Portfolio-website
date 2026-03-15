@@ -5,28 +5,25 @@ import Link from 'next/link'
 const navItems = [
     {
         label: 'About',
-        href: '/'
+        href: '#about'
     },
     {
         label: 'Education',
-        href: '/'
+        href: '#education'
     },
-    {
-        label: 'Experience',
-        href: '/'
-    },
+   
     {
         label: 'Projects',
-        href: '/'
-    },
-    {
-        label: 'Skills',
-        href: '/'
+        href: '#projects'
     },
     {
         label: 'Certifications',
-        href: '/'
-    }
+        href: '#certifications'
+    },
+    {
+        label: 'Skills',
+        href: '#skills'
+    },
 ]
 function Navbar() {
       return (

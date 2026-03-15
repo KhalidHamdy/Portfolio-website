@@ -6,9 +6,9 @@ import Heading from '@/components/typography/heading'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function AboutSection() {
+function AboutSection({ id }: { id: string }) {
     return (
-        <Section className='py-8 flex gap-4 flex-col'>
+        <Section id={id} className='py-8 flex gap-4 flex-col'>
             <Heading size='sm' className='text-orange-300'>Data Analyst</Heading>
             <div className='flex gap-16'>
                 <div className='w-1/2 flex flex-col gap-8'>
