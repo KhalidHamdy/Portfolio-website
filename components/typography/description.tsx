@@ -6,7 +6,7 @@ interface DescriptionProps {
 
 export default function Description({ children, className, size }: DescriptionProps) {
   return (
-    <p className={`text-2xl ${size === 'lg'? 'text-2xl' : size === 'md' ? 'text-xl' : size === 'sm' ? 'text-lg' : 'text-md'}  font-normal ${className}`}>
+    <p className={`text-2xl ${size === 'lg'? 'text-2xl' : size === 'md' ? 'text-xl' : size === 'sm' ? 'text-lg' : size === 'xs' ? 'text-sm' : 'text-md'}  font-normal ${className}`}>
         {children}
     </p>
     
