@@ -24,7 +24,7 @@ function SideBar() {
   };
 
   return (
-    <div className="w-64 h-screen bg-gray-600 text-white flex flex-col">
+    <div className="w-64 min-h-screen bg-gray-600 text-white flex flex-col border-r border-black">
       <Heading size="sm" className="p-4 font-bold border-b border-gray-700">
           Admin Dashboard
       </Heading>
