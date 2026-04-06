@@ -9,7 +9,7 @@ function SkillsMainContent() {
         "Soft Skills": ["Communication", "Teamwork", "Problem Solving"],
     }); // This will be replaced with actual data fetching logic in the future
     return (
-        <Section className="py-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Section className="py-4 grid grid-cols-1 md:grid-cols-2 gap-6">
 
            <SkillsSection title="Technical" skills={skillsData["Technical Skills"]} />
            <SkillsSection title="Soft" skills={skillsData["Soft Skills"]} />
