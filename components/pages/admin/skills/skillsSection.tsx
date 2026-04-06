@@ -8,9 +8,9 @@ interface SkillsSectionProps {
 function SkilsSection({ title, skills }: SkillsSectionProps) {
 
   return (
-     <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 border border-gray-600 hover:border-orange-400 transition-all hover:shadow-lg hover:shadow-orange-500/20 mb-4">
+    <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 border border-gray-600 hover:border-orange-400 transition-all hover:shadow-lg hover:shadow-orange-500/20 mb-4">
                     <div className="flex justify-between items-center pb-4">
-                        <Heading size="sm" className="font-bold text-white">⚡{title} Skills</Heading>
+                        <Heading size="sm" className="font-bold text-white">{title} Skills</Heading>
                         <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors">
                             Add New Skill
                         </button>
