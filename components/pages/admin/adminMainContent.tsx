@@ -1,3 +1,4 @@
+import Section from '@/components/helpers/section';
 import Description from '@/components/typography/description';
 import { auth } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
@@ -27,7 +28,7 @@ function MainContent({ user }: MainContentProps) {
     };
 
     return (
-        <div className="py-4 px-8">
+        <Section>
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 {stats.map((stat, i) => (
@@ -100,7 +101,7 @@ function MainContent({ user }: MainContentProps) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Section>
     )
 }
 
