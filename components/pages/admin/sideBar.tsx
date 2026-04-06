@@ -7,10 +7,10 @@ import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 
 const sections = [
-  { name: "Skills", href: "/admin/skills" },
-  { name: "Projects", href: "/admin/projects" },
   { name: "Experience", href: "/admin/experience" },
+  { name: "Projects", href: "/admin/projects" },
   { name: "Education", href: "/admin/education" },
+  { name: "Skills", href: "/admin/skills" },
   { name: "Certifications", href: "/admin/certifications" }
 
 ]
@@ -26,7 +26,10 @@ function SideBar() {
   return (
     <div className="w-64 min-h-screen bg-gray-600 text-white flex flex-col border-r border-black">
       <Heading size="sm" className="p-4 font-bold border-b border-gray-700">
+
+        <Link href="/admin">
           Admin Dashboard
+        </Link>
       </Heading>
       <div className="p-4">
         {sections.map((section) => (
@@ -34,9 +37,9 @@ function SideBar() {
             {section.name}
           </Link>
         ))}
-        
+
       </div>
-      <footer className="mt-auto p-4 text-sm text-gray-400 border-t border-gray-700 flex flex-col gap-4">
+      <footer className="p-4 text-sm text-gray-400 border-t border-gray-700 flex flex-col gap-4">
         <Link href="/" className="block hover:text-gray-700">
           Back to your portfolio
         </Link>
@@ -45,8 +48,8 @@ function SideBar() {
         </button>
       </footer>
 
-      
-    </div>
+
+    </div >
   )
 }
 
