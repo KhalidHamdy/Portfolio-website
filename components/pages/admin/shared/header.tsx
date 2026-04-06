@@ -1,3 +1,4 @@
+"use client";
 import Section from "@/components/helpers/section";
 import Heading from "@/components/typography/heading";
 import { useAuth } from "@/context/AuthContext";
