@@ -7,11 +7,13 @@ import { auth } from "@/lib/firebase";
 interface AuthContextType {
   user: User | null;
   loading: boolean;
+  getInitials: () => string;
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
   loading: true,
+  getInitials: () => "",
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -26,8 +28,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => unsubscribe();
   }, []);
 
+  
+  const getInitials = () => {
+    return (
+      user?.displayName
+        ?.split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2) ?? user?.email?.[0]?.toUpperCase() ?? "U"
+    );
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext.Provider value={{ user, loading, getInitials }}>
       {children}
     </AuthContext.Provider>
   );
