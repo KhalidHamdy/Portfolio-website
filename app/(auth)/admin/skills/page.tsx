@@ -1,7 +1,6 @@
 "use client";
 import Header from '@/components/pages/admin/shared/header';
 import SkillsMainContent from '@/components/pages/admin/skills/skillsMainContent';
-import { useAuth } from '@/context/AuthContext';
 
 function SkillsPage() {
     return (
