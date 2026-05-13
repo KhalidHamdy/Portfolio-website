@@ -2,37 +2,26 @@ const mongoose = require("mongoose");
 
 const educationSchema = new mongoose.Schema(
   {
-    institution: {
+    field_of_study: {
       type: String,
-      required: [true, "Institution name is required"],
+      required: [true, "Field of study is required"],
       trim: true,
     },
-    degree: {
+    university: {
       type: String,
-      required: [true, "Degree is required"],
-      trim: true,
-    },
-    fieldOfStudy: {
-      type: String,
-      trim: true,
-    },
-    startDate: {
-      type: Date,
-      required: [true, "Start date is required"],
-    },
-    endDate: {
-      type: Date, // null = still studying
-    },
-    grade: {
-      type: String,
+      required: [true, "University is required"],
       trim: true,
     },
     description: {
       type: String,
       trim: true,
     },
-    logo: {
-      type: String,
+    start_date: {
+      type: String, // stored as "YYYY" or "YYYY-MM" string to match the UI format
+      trim: true,
+    },
+    end_date: {
+      type: String, // null / empty = still studying
       trim: true,
     },
   },

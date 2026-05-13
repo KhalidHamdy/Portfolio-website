@@ -4,29 +4,19 @@ const certificationSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: [true, "Certification title is required"],
+      required: [true, "Title is required"],
       trim: true,
     },
-    issuer: {
+    institute: {
       type: String,
-      required: [true, "Issuing organization is required"],
+      required: [true, "Institute is required"],
       trim: true,
     },
-    issueDate: {
-      type: Date,
-    },
-    expiryDate: {
-      type: Date,
-    },
-    credentialId: {
-      type: String,
+    end_date: {
+      type: String, // stored as "YYYY-MM" string to match the UI format
       trim: true,
     },
-    credentialUrl: {
-      type: String,
-      trim: true,
-    },
-    image: {
+    description: {
       type: String,
       trim: true,
     },

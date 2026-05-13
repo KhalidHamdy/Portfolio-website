@@ -2,46 +2,26 @@ const mongoose = require("mongoose");
 
 const experienceSchema = new mongoose.Schema(
   {
+    title: {
+      type: String,
+      required: [true, "Title is required"],
+      trim: true,
+    },
     company: {
       type: String,
-      required: [true, "Company name is required"],
+      required: [true, "Company is required"],
       trim: true,
-    },
-    position: {
-      type: String,
-      required: [true, "Position title is required"],
-      trim: true,
-    },
-    employmentType: {
-      type: String,
-      enum: ["Full-time", "Part-time", "Freelance", "Internship", "Contract"],
-      default: "Full-time",
-    },
-    location: {
-      type: String,
-      trim: true,
-    },
-    startDate: {
-      type: Date,
-      required: [true, "Start date is required"],
-    },
-    endDate: {
-      type: Date, // null = current job
-    },
-    isCurrent: {
-      type: Boolean,
-      default: false,
     },
     description: {
       type: String,
       trim: true,
     },
-    technologies: {
-      type: [String],
-      default: [],
+    start_date: {
+      type: String, // stored as "YYYY-MM" string to match the UI format
+      trim: true,
     },
-    logo: {
-      type: String,
+    end_date: {
+      type: String, // empty = current job
       trim: true,
     },
   },
