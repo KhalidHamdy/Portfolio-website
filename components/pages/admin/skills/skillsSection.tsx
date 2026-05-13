@@ -2,6 +2,7 @@ import Heading from "@/components/typography/heading";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import AddSkillDialog from "./addSkillDialog";
+import { IconEdit, IconTrash } from "@tabler/icons-react";
 
 interface SkillsSectionProps {
   title: string;
@@ -31,9 +32,17 @@ function SkilsSection({ title, skills }: SkillsSectionProps) {
             {skills.map((skill, index) => (
               <li
                 key={index}
-                className="text-gray-300 block w-full border border-gray-600 rounded-md px-4 py-2 hover:bg-gray-600 transition-colors"
+                className="group flex justify-between items-center text-gray-300 w-full border border-gray-600 rounded-md px-4 py-2 hover:bg-gray-600 transition-colors"
               >
-                {skill}
+                <span>{skill}</span>
+                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <button className="p-1 bg-gray-500 hover:bg-gray-400 rounded-md text-white transition-colors shadow-sm" title="Edit">
+                    <IconEdit size={16} />
+                  </button>
+                  <button className="p-1 bg-red-600/80 hover:bg-red-500 rounded-md text-white transition-colors shadow-sm" title="Delete">
+                    <IconTrash size={16} />
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

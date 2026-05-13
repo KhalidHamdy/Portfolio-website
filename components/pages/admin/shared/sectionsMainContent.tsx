@@ -2,7 +2,7 @@
 import Section from "@/components/helpers/section";
 import Description from "@/components/typography/description";
 import Heading from "@/components/typography/heading";
-import { IconBrandGithub, IconWorldWww } from "@tabler/icons-react";
+import { IconBrandGithub, IconWorldWww, IconEdit, IconTrash } from "@tabler/icons-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -43,7 +43,7 @@ function SectionsMainContent({ title, data }: SectionProps) {
           <>
             {data.map((item) => (
               <div key={item.id}>
-                <div className="text-gray-300 mt-4 space-y-2 border border-gray-600 rounded-xl hover:border-orange-400 transition-all p-4">
+                <div className="group text-gray-300 mt-4 space-y-2 border border-gray-600 rounded-xl hover:border-orange-400 transition-all p-4">
                   <div className="flex justify-between items-start">
                     <div>
                       <Heading size="sm" className="font-bold">
@@ -53,11 +53,21 @@ function SectionsMainContent({ title, data }: SectionProps) {
                         {item.institute}
                       </Description>
                     </div>
-                    <Description size="sm" className="text-gray-300">
-                      {item.start_date
-                        ? `${item.start_date} - ${item.end_date}`
-                        : `${item.end_date}`}
-                    </Description>
+                    <div className="flex items-center gap-4">
+                      <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <button className="p-1.5 bg-gray-700 hover:bg-gray-600 rounded-md text-gray-300 hover:text-white transition-colors shadow-sm" title="Edit">
+                          <IconEdit size={18} />
+                        </button>
+                        <button className="p-1.5 bg-red-900/40 hover:bg-red-900/80 rounded-md text-red-400 hover:text-red-300 transition-colors shadow-sm" title="Delete">
+                          <IconTrash size={18} />
+                        </button>
+                      </div>
+                      <Description size="sm" className="text-gray-300 shrink-0">
+                        {item.start_date
+                          ? `${item.start_date} - ${item.end_date}`
+                          : `${item.end_date}`}
+                      </Description>
+                    </div>
                   </div>
                   <Description size="sm" className="text-gray-300 mt-2">
                     {item.description}
