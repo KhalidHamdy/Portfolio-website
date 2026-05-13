@@ -1,8 +1,6 @@
 "use client";
 
 import { useAuth } from "@/context/AuthContext";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import Header from "@/components/pages/admin/shared/header";
 import MainContent from "@/components/pages/admin/adminMainContent";
 

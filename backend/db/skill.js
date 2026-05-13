@@ -1,0 +1,39 @@
+const mongoose = require("mongoose");
+
+const skillSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Skill name is required"],
+      trim: true,
+    },
+    category: {
+      type: String,
+      trim: true,
+      default: "General",
+    },
+    level: {
+      type: String,
+      enum: ["Beginner", "Intermediate", "Advanced", "Expert"],
+      default: "Intermediate",
+    },
+    icon: {
+      type: String,
+      trim: true,
+    },
+  },
+  { timestamps: true }
+);
+
+// ── Queries ──────────────────────────────────────────────────────────────────
+
+/** Return every skill document */
+const getAllSkills = () => mongoose.model("Skill", skillSchema).find();
+
+/** Insert a single new skill document */
+const addSkill = (data) => mongoose.model("Skill", skillSchema).create(data);
+
+// ─────────────────────────────────────────────────────────────────────────────
+module.exports = mongoose.model("Skill", skillSchema);
+module.exports.getAllSkills = getAllSkills;
+module.exports.addSkill = addSkill;
