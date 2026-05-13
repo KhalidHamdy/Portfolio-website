@@ -49,7 +49,12 @@ const getAllEducation = () =>
 const addEducation = (data) =>
   mongoose.model("Education", educationSchema).create(data);
 
+/** Delete an education entry by its MongoDB _id */
+const deleteEducation = (id) =>
+  mongoose.model("Education", educationSchema).findByIdAndDelete(id);
+
 // ─────────────────────────────────────────────────────────────────────────────
 module.exports = mongoose.model("Education", educationSchema);
 module.exports.getAllEducation = getAllEducation;
 module.exports.addEducation = addEducation;
+module.exports.deleteEducation = deleteEducation;

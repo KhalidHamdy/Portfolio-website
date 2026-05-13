@@ -29,4 +29,20 @@ router.post("/", async (req, res) => {
   }
 });
 
+/**
+ * DELETE /api/experience/:id
+ * Deletes a single experience entry by its _id
+ */
+router.delete("/:id", async (req, res) => {
+  try {
+    const deleted = await Experience.deleteExperience(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Experience entry not found" });
+    }
+    res.status(200).json({ success: true, message: "Experience entry deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 module.exports = router;

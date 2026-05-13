@@ -58,7 +58,12 @@ const getAllExperiences = () =>
 const addExperience = (data) =>
   mongoose.model("Experience", experienceSchema).create(data);
 
+/** Delete an experience entry by its MongoDB _id */
+const deleteExperience = (id) =>
+  mongoose.model("Experience", experienceSchema).findByIdAndDelete(id);
+
 // ─────────────────────────────────────────────────────────────────────────────
 module.exports = mongoose.model("Experience", experienceSchema);
 module.exports.getAllExperiences = getAllExperiences;
 module.exports.addExperience = addExperience;
+module.exports.deleteExperience = deleteExperience;

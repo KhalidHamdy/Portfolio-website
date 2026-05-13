@@ -44,7 +44,12 @@ const getAllCertifications = () =>
 const addCertification = (data) =>
   mongoose.model("Certification", certificationSchema).create(data);
 
+/** Delete a certification by its MongoDB _id */
+const deleteCertification = (id) =>
+  mongoose.model("Certification", certificationSchema).findByIdAndDelete(id);
+
 // ─────────────────────────────────────────────────────────────────────────────
 module.exports = mongoose.model("Certification", certificationSchema);
 module.exports.getAllCertifications = getAllCertifications;
 module.exports.addCertification = addCertification;
+module.exports.deleteCertification = deleteCertification;

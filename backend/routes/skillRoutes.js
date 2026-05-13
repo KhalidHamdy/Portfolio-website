@@ -29,4 +29,20 @@ router.post("/", async (req, res) => {
   }
 });
 
+/**
+ * DELETE /api/skills/:id
+ * Deletes a single skill by its _id
+ */
+router.delete("/:id", async (req, res) => {
+  try {
+    const deleted = await Skill.deleteSkill(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Skill not found" });
+    }
+    res.status(200).json({ success: true, message: "Skill deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 module.exports = router;

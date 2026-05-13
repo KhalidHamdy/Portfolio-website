@@ -29,4 +29,20 @@ router.post("/", async (req, res) => {
   }
 });
 
+/**
+ * DELETE /api/certifications/:id
+ * Deletes a single certification by its _id
+ */
+router.delete("/:id", async (req, res) => {
+  try {
+    const deleted = await Certification.deleteCertification(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Certification not found" });
+    }
+    res.status(200).json({ success: true, message: "Certification deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 module.exports = router;
