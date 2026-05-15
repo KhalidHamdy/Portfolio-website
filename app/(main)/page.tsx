@@ -1,6 +1,6 @@
 import Certifications from "@/components/pages/main/certifications";
 import AboutSection from "@/components/pages/main/aboutSection";
-import Education from "@/components/pages/main/eduction";
+import Education from "@/components/pages/main/education";
 import Projects from "@/components/pages/main/projects";
 import Skills from "@/components/pages/main/skills";
 
